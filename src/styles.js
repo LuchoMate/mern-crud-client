@@ -14,6 +14,8 @@ export default makeStyles((theme) => ({
   },
   image: {
     marginLeft: '15px',
+    marginTop: '5px',
+    marginBottom: '5px'
   },
   [theme.breakpoints.down('sm')]:{
     appContainer: {
