@@ -2,6 +2,13 @@ import axios from 'axios'
 
 const API = axios.create({ baseURL: 'http://localhost:5000' });
 
+API.interceptors.request.use((req) => {//ocurre antes de cada llamada a la api
+    if(localStorage.getItem('profile')){
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`
+    }
+    return req
+})
+
 //const url = "http://localhost:5000/posts"
 //const url = "https://mern-memory-back.herokuapp.com/posts"
 
